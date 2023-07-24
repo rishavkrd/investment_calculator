@@ -1,5 +1,12 @@
+
 pipeline {
-    agent { docker { image 'node:18.16.0-alpine' } }
+    agent {
+    label 'docker' 
+  }
+    agent { docker
+           label 'docker'
+           { image 'node:18.16.0-alpine' } 
+          }
     stages {
         stage('build') {
             steps {
